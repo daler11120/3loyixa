@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="http://127.0.0.1:5500/assets/images/img_storefront.svg" type="image/x-icon">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background-color: var(--background);
+      }
+
+      .wallet-container {
+        min-height: 100vh;
+        background-color: var(--background);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .wallet-box {
+        background-color: var(--background-secondary);
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 800px;
+        width: 100%;
+        margin: 40px auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .wallet-title {
+        font-family: var(--h3-work-sans-font-family);
+        font-weight: var(--h3-work-sans-font-weight);
+        color: var(--white);
+        font-size: 38px;
+        letter-spacing: var(--h1-work-sans-letter-spacing);
+        line-height: var(--h1-work-sans-line-height);
+        margin: 0 0 10px 0;
+        text-align: center;
+      }
+
+      .wallet-subtitle {
+        font-family: var(--body-text-work-sans-font-family);
+        font-weight: var(--body-text-work-sans-font-weight);
+        color: var(--caption-label-text);
+        font-size: var(--body-text-work-sans-font-size);
+        text-align: center;
+        margin: 0 0 40px 0;
+        line-height: 1.6;
+      }
+
+      .wallet-options {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+
+      .wallet-option {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        background-color: var(--background);
+        border: 2px solid var(--caption-label-text);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .wallet-option:hover {
+        border-color: var(--call-to-action);
+        background-color: rgba(162, 89, 255, 0.05);
+      }
+
+      .wallet-option.selected {
+        border-color: var(--call-to-action);
+        background-color: rgba(162, 89, 255, 0.1);
+      }
+
+      .checkbox-container {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+
+      .checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        border: 2px solid var(--caption-label-text);
+        border-radius: 50%;
+        background-color: transparent;
+        transition: all 0.3s ease;
+      }
+
+      .checkbox-container input:checked ~ .checkmark {
+        border-color: var(--call-to-action);
+        background-color: var(--call-to-action);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .checkbox-container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .checkbox-container .checkmark:after {
+        left: 8px;
+        top: 4px;
+        width: 6px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .wallet-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex-grow: 1;
+      }
+
+      .wallet-name {
+        font-family: var(--body-text-work-sans-font-family);
+        font-weight: 600;
+        color: var(--white);
+        font-size: 22px;
+        margin: 0;
+      }
+
+      .wallet-description {
+        font-family: var(--body-text-work-sans-font-family);
+        font-weight: var(--body-text-work-sans-font-weight);
+        color: var(--caption-label-text);
+        font-size: 16px;
+        margin: 0;
+      }
+
+      .divider {
+        height: 1px;
+        background-color: var(--caption-label-text);
+        margin: 30px 0;
+        opacity: 0.3;
+      }
+
+      .footer-section {
+        margin-top: 30px;
+      }
+
+      .footer-title {
+        font-family: var(--h3-work-sans-font-family);
+        font-weight: var(--h3-work-sans-font-weight);
+        color: var(--white);
+        font-size: 22px;
+        margin: 0 0 20px 0;
+      }
+
+      .footer-content {
+        font-family: var(--body-text-work-sans-font-family);
+        font-weight: var(--body-text-work-sans-font-weight);
+        color: var(--caption-label-text);
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Hamburger menyu stili */
+      .navigation {
+        background-color: var(--background);
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--background-secondary);
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .storefront {
+        width: 32px;
+        height: 32px;
+      }
+
+      .NFT-marketplace {
+        height: 20px;
+      }
+
+      .hamburger-menu {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .hamburger-menu span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: var(--text);
+        border-radius: 3px;
+        transition: 0.3s;
+      }
+
+      .nav-nav-menu {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-nav-menu a {
+        text-decoration: none;
+      }
+
+      .button {
+        font-family: var(--body-text-work-sans-font-family);
+        font-weight: 600;
+        color: var(--white);
+        font-size: 16px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .button:hover {
+        color: var(--call-to-action);
+      }
+
+      .sign-up {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 30px;
+        background-color: var(--call-to-action);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .sign-up:hover {
+        background-color: #8a4fd6;
+        transform: scale(0.98);
+      }
+
+      .sign-up .img {
+        width: 20px;
+        height: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .hamburger-menu {
+          display: flex;
+        }
+        
+        .nav-nav-menu {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--background);
+          padding: 20px;
+          gap: 20px;
+        }
+        
+        .nav-nav-menu.active {
+          display: flex;
+        }
+        
+        .wallet-box {
+          padding: 20px;
+          margin: 20px auto;
+        }
+        
+        .navigation {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="homepage-desktop">
+      <div class="navigation">
+        <div class="nav-logo">
+          <div class="logo">
+            <img class="storefront" src="assets/images/img_storefront.svg" />
+            <img class="NFT-marketplace" src="assets/images/img_nft_marketplace.svg" />
+          </div>
+        </div>
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-nav-menu" id="navMenu">
+          <a href="index.html"><div class="div"><div class="button"></div></div></a>
+          <a href="marketplace.html"><div class="div"><div class="button">Marketplace</div></div></a>
+          <a href="rankings.html"><div class="div"><div class="button">Rankings</div></div></a>
+          <a href="connect-wallet.html"><div class="div"><div class="button">Connect a wallet</div></div></a>
+          <a href="register.html"><div class="sign-up">
+            <img class="img" src="assets/images/img_user.svg" />
+            <div class="button">Sign Up</div>
+          </div></a>
+        </div>
+      </div>
+
+      <div class="wallet-container">
+        <div class="wallet-box">
+          <h1 class="wallet-title">Connect Wallet</h1>
+          <p class="wallet-subtitle">Choose a wallet you want to connect.<br>There are several wallet providers.</p>
+          
+          <div class="wallet-options">
+            <div class="wallet-option" data-wallet="metamask">
+              <div class="checkbox-container">
+                <input type="radio" name="wallet" id="metamask">
+                <span class="checkmark"></span>
+              </div>
+              <div class="wallet-info">
+                <h3 class="wallet-name">Metamask</h3>
+              </div>
+            </div>
+            
+            <div class="wallet-option selected" data-wallet="walletconnect">
+              <div class="checkbox-container">
+                <input type="radio" name="wallet" id="walletconnect" checked>
+                <span class="checkmark"></span>
+              </div>
+              <div class="wallet-info">
+                <h3 class="wallet-name">Wallet Connect</h3>
+              </div>
+            </div>
+            
+            <div class="wallet-option" data-wallet="coinbase">
+              <div class="checkbox-container">
+                <input type="radio" name="wallet" id="coinbase">
+                <span class="checkmark"></span>
+              </div>
+              <div class="wallet-info">
+                <h3 class="wallet-name">Coinbase</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="divider"></div>
+          
+          <div class="footer-section">
+            <h2 class="footer-title">NFT Marketplace UI created with Asima for Flynn</h2>
+            <p class="footer-content">Join our community</p>
+            
+            <div style="margin-top: 30px;">
+              <h3 class="footer-title" style="font-size: 20px;">NFT Marketplace</h3>
+              <p class="footer-content">Marketplace<br>Rankings</p>
+            </div>
+            
+            <div style="margin-top: 30px;">
+              <h3 class="footer-title" style="font-size: 20px;">ExpLore</h3>
+              <p class="footer-content">Marketplace<br>Comeset & v</p>
+            </div>
+            
+            <div style="margin-top: 30px;">
+              <h3 class="footer-title" style="font-size: 20px;">Join Our Weekly Digest</h3>
+              <p class="footer-content">Get exclusive promotions & updates straight to your inbox.</p>
+            </div>
+            
+            <div style="margin-top: 20px;">
+              <h3 class="footer-title" style="font-size: 18px;">Enter your email here</h3>
+              <p class="footer-content" style="margin-top: 10px;">Subscribe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Hamburger menyu uchun JavaScript
+      document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburgerBtn.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+        });
+        
+        // Wallet tanlash funksiyasi
+        const walletOptions = document.querySelectorAll('.wallet-option');
+        walletOptions.forEach(option => {
+          option.addEventListener('click', function() {
+            // Barcha optionlardan selected classini olib tashlaymiz
+            walletOptions.forEach(opt => {
+              opt.classList.remove('selected');
+              const checkbox = opt.querySelector('input[type="radio"]');
+              if (checkbox) checkbox.checked = false;
+            });
+            
+            // Faqat tanlangan optionga selected classini qo'shamiz
+            this.classList.add('selected');
+            const checkbox = this.querySelector('input[type="radio"]');
+            if (checkbox) checkbox.checked = true;
+          });
+        });
+        
+        // Tashqi joyga bosilganda menyuni yopish
+        document.addEventListener('click', function(event) {
+          if (!hamburgerBtn.contains(event.target) && !navMenu.contains(event.target)) {
+            navMenu.classList.remove('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

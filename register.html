@@ -1,0 +1,792 @@
+<html translate="no" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="http://127.0.0.1:5500/assets/images/img_storefront.svg" type="image/x-icon">
+  <title>Create Account | NFT Marketplace | Digital Art Platform</title>
+  <meta name="description" content="Join the leading NFT marketplace. Create your account to start creating, collecting and selling digital art and NFTs. Secure registration with instant access.">
+  <meta name="keywords" content="NFT marketplace, create account, digital art, blockchain, cryptocurrency, NFT registration, sign up">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Create Account | NFT Marketplace | Digital Art Platform">
+  <meta property="og:description" content="Join the leading NFT marketplace. Create your account to start creating, collecting and selling digital art and NFTs.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleguide.css">
+  <link rel="stylesheet" href="globals.css">
+  
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #2b2b2b;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+    
+    /* Layout components */
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #2b2b2b;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 16px;
+      background-color: #2b2b2b;
+      width: 100%;
+    }
+    
+    .logo-section {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .logo-text {
+      width: 198px;
+      height: 18px;
+      align-self: flex-end;
+    }
+    
+    .nav-section {
+      display: none;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .nav-item {
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      line-height: 19px;
+      text-align: center;
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-item:hover {
+      color: #a259ff;
+    }
+    
+    .sign-up-btn {
+      display: none;
+      gap: 12px;
+      padding: 18px 30px 18px 62px;
+      background-color: #a259ff;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      line-height: 19px;
+      text-align: center;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      position: relative;
+    }
+    
+    .sign-up-btn:before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-image: url('assets/images/img_user.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .sign-up-btn:hover {
+      background-color: #8b47d9;
+      transform: scale(1.05);
+    }
+    
+    .hamburger {
+      display: block;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .content-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: #2b2b2b;
+    }
+    
+    .hero-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      padding: 32px 16px;
+    }
+    
+    .form-header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .form-title {
+      font-size: 32px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      line-height: 38px;
+      text-align: left;
+      text-transform: capitalize;
+      color: #ffffff;
+    }
+    
+    .form-subtitle {
+      font-size: 18px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: left;
+      text-transform: capitalize;
+      color: #ffffff;
+      width: 100%;
+    }
+    
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .input-field {
+      position: relative;
+      width: 100%;
+    }
+    
+    .input-field input {
+      width: 100%;
+      padding: 12px 12px 12px 52px;
+      background-color: #ffffff;
+      border: 1px solid #858584;
+      border-radius: 20px;
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 19px;
+      color: #2b2b2b;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    
+    .input-field input:focus {
+      border-color: #a259ff;
+      outline: 2px solid #a259ff;
+      outline-offset: 2px;
+    }
+    
+    .input-field input::placeholder {
+      color: #858584;
+    }
+    
+    .input-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+    }
+    
+    .create-account-btn {
+      width: 100%;
+      padding: 12px 34px;
+      background-color: #a259ff;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      line-height: 19px;
+      text-align: center;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .create-account-btn:hover {
+      background-color: #8b47d9;
+      transform: scale(1.02);
+    }
+    
+    .create-account-btn:active {
+      transform: scale(0.98);
+    }
+    
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      padding: 36px 16px;
+      background-color: #3b3b3b;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+    
+    .footer-main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .footer-logo {
+      width: 242px;
+      height: 32px;
+    }
+    
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .footer-description {
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 22px;
+      text-align: left;
+      color: #cccccc;
+      width: 100%;
+    }
+    
+    .social-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .social-title {
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 19px;
+      text-align: left;
+      color: #cccccc;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+    
+    .footer-explore {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .footer-section-title {
+      font-size: 22px;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      line-height: 33px;
+      text-align: left;
+      text-transform: capitalize;
+      color: #ffffff;
+    }
+    
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .footer-link {
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 19px;
+      text-align: left;
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-link:hover {
+      color: #a259ff;
+    }
+    
+    .newsletter-section {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .newsletter-content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .newsletter-description {
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 22px;
+      text-align: left;
+      color: #cccccc;
+      width: 100%;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 16px;
+    }
+    
+    .newsletter-input {
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 19px;
+      text-align: left;
+      color: #2b2b2b;
+      background: none;
+      border: none;
+      outline: none;
+      width: 100%;
+      margin-left: 4px;
+    }
+    
+    .newsletter-input::placeholder {
+      color: #858584;
+    }
+    
+    .subscribe-btn {
+      padding: 18px 34px;
+      background-color: #a259ff;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      line-height: 19px;
+      text-align: center;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: 100%;
+    }
+    
+    .subscribe-btn:hover {
+      background-color: #8b47d9;
+      transform: scale(1.02);
+    }
+    
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #858584;
+    }
+    
+    .footer-copyright {
+      font-size: 12px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 15px;
+      text-align: left;
+      color: #cccccc;
+    }
+    
+    /* Typography */
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 38px;
+      color: #ffffff;
+    }
+    
+    /* Interactive states */
+    button:focus {
+      outline: 2px solid #a259ff;
+      outline-offset: 2px;
+    }
+    
+    /* Responsive media queries */
+    @media (min-width: 640px) {
+      .header {
+        padding: 20px 32px;
+      }
+      
+      .hamburger {
+        display: none;
+      }
+      
+      .nav-section {
+        display: flex;
+      }
+      
+      .sign-up-btn {
+        display: flex;
+      }
+      
+      .form-section {
+        padding: 32px;
+      }
+      
+      .form-title {
+        font-size: 40px;
+        line-height: 48px;
+      }
+      
+      .form-subtitle {
+        font-size: 20px;
+        line-height: 32px;
+        width: 85%;
+      }
+      
+      .newsletter-form {
+        flex-direction: row;
+        padding: 4px;
+      }
+      
+      .subscribe-btn {
+        width: auto;
+      }
+      
+      .footer-top {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      
+      .footer-left {
+        width: 60%;
+      }
+      
+      .newsletter-section {
+        width: 40%;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .content-section {
+        flex-direction: row;
+      }
+      
+      .hero-image {
+        width: 48%;
+        height: 690px;
+      }
+      
+      .form-section {
+        width: 48%;
+        padding: 94px 32px 32px;
+      }
+      
+      .form-title {
+        font-size: 51px;
+        line-height: 60px;
+      }
+      
+      .form-subtitle {
+        font-size: 22px;
+        line-height: 35px;
+        width: 74%;
+      }
+      
+      .form-container {
+        width: 54%;
+      }
+      
+      .footer-left {
+        flex-direction: row;
+        gap: 30px;
+        width: 46%;
+      }
+      
+      .footer-brand {
+        width: 100%;
+      }
+      
+      .footer-explore {
+        width: 28%;
+      }
+      
+      .newsletter-section {
+        width: 40%;
+      }
+      
+      .footer-info {
+        width: 72%;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .header {
+        padding: 20px 50px;
+      }
+      
+      .footer {
+        padding: 36px 114px;
+      }
+      
+      .footer-content {
+        margin: 0 auto;
+      }
+    }
+    
+    @media (min-width: 1280px) {
+      .main-container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fnftcreato3047back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body>
+  <div class="main-container">
+    <header class="header">
+      <div class="logo-section">
+        <img src="assets/images/img_storefront.svg" alt="NFT Marketplace Logo" class="logo-icon">
+        <img src="assets/images/img_nft_marketplace.svg" alt="NFT Marketplace" class="logo-text">
+      </div>
+      
+      <nav class="nav-section">
+        <div class="nav-menu">
+          <a href="marketplace.html" class="nav-item">Marketplace</a>
+          <a href="rankings.html" class="nav-item">Rankings</a>
+          <a href="connect-wallet.html" class="nav-item">Connect a wallet</a>
+        </div>
+        <a href="register.html" class="sign-up-btn">Sign Up</a>
+      </nav>
+      
+      <button class="hamburger">☰</button>
+    </header>
+    
+    <main class="content-section">
+      <img src="assets/images/img_image_placeholder.png" alt="Space-themed NFT artwork showing astronauts and futuristic spacecraft" class="hero-image">
+      
+      <section class="form-section">
+        <div class="form-header">
+          <h1 class="form-title">Create account</h1>
+          <p class="form-subtitle">Welcome! enter your details and start creating, collecting and selling NFTs.</p>
+        </div>
+        
+        <div class="form-container">
+          <form class="input-group">
+            <div class="input-field">
+              <img src="assets/images/img_user_gray_400.svg" alt="User icon" class="input-icon">
+              <input type="text" placeholder="Username" required>
+            </div>
+            
+            <div class="input-field">
+              <img src="assets/images/img_envelopesimple.svg" alt="Email icon" class="input-icon">
+              <input type="email" placeholder="Email Address" required>
+            </div>
+            
+            <div class="input-field">
+              <img src="assets/images/img_lockkey.svg" alt="Password icon" class="input-icon">
+              <input type="password" placeholder="Password" required>
+            </div>
+            
+            <div class="input-field">
+              <img src="assets/images/img_lockkey.svg" alt="Confirm password icon" class="input-icon">
+              <input type="password" placeholder="Confirm Password" required>
+            </div>
+          </form>
+          
+          <button type="submit" class="create-account-btn">Create account</button>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-top">
+            <div class="footer-left">
+              <div class="footer-brand">
+                <img src="assets/images/img_footer_logo.png" alt="NFT Marketplace Footer Logo" class="footer-logo">
+                
+                <div class="footer-info">
+                  <p class="footer-description">NFT marketplace UI created with Anima for Figma.</p>
+                  
+                  <div class="social-section">
+                    <p class="social-title">Join our community</p>
+                    <div class="social-icons">
+                      <img src="assets/images/img_discordlogo.svg" alt="Discord" class="social-icon">
+                      <img src="assets/images/img_youtubelogo.svg" alt="YouTube" class="social-icon">
+                      <img src="assets/images/img_twitterlogo.svg" alt="Twitter" class="social-icon">
+                      <img src="assets/images/img_instagramlogo.svg" alt="Instagram" class="social-icon">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="footer-explore">
+                <h3 class="footer-section-title">Explore</h3>
+                <ul class="footer-links">
+                  <li><a href="marketplace.html" class="footer-link">Marketplace</a></li>
+                  <li><a href="rankings.html" class="footer-link">Rankings</a></li>
+                  <li><a href="connect-wallet.html" class="footer-link">Connect a wallet</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="newsletter-section">
+              <h3 class="footer-section-title">Join our weekly digest</h3>
+              <div class="newsletter-content">
+                <p class="newsletter-description">Get exclusive promotions & updates straight to your inbox.</p>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Enter your email here" class="newsletter-input">
+                  <button type="submit" class="subscribe-btn">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer-divider"></div>
+        </div>
+        
+        <p class="footer-copyright">Ⓒ NFT Market. Use this template freely.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+

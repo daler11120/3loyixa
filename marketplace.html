@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="http://127.0.0.1:5500/assets/images/img_storefront.svg" type="image/x-icon">
+    <style>
+      .tab, .tab-2 {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .tab:hover, .tab-2:hover {
+        opacity: 0.8;
+      }
+      .tab.active, .tab-2.active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marketplace-desktop">
+      <div class="navigation">
+        <div class="nav-logo">
+          <div class="logo">
+            <img class="storefront" src="assets/images/img_storefront.svg" />
+            <img class="NFT-marketplace" src="assets/images/img_nft_marketplace.svg" />
+          </div>
+        </div>
+        <div class="nav-nav-menu">
+          <a href="index.html"><div class="div"><div class="button">Marketplace</div></div></a>
+          <a href="rankings.html"><div class="div"><div class="button">Rankings</div></div></a>
+          <a href="connect-wallet.html"><div class="div"><div class="button">Connect a wallet</div></div></a>
+          <a href="register.html"><div class="sign-up">
+            <img class="img" src="https://c.animaapp.com/mimzazk2fu1xp8/img/user.svg" />
+            <div class="button">Sign Up</div>
+          </div></a>
+        </div>
+      </div>
+      <div class="headline-subhead">
+        <div class="headline-subhead-2">
+          <div class="frame">
+            <div class="text-wrapper">Browse Marketplace</div>
+            <p class="p">Browse through more than 50k NFTs on the NFT Marketplace.</p>
+          </div>
+          <div class="table-header">
+            <div class="table-headers">
+              <input class="rank-artist" placeholder="Search your favourite NFTs" />
+              <img class="asset" src="https://c.animaapp.com/mimzpstaEdv43I/img/magnifyingglass.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="marketplace-section">
+        <div class="frame-2">
+          <img class="img" src="https://c.animaapp.com/mimzpstaEdv43I/img/line-2-1.svg" />
+          <div class="tabs-wrapper">
+            <div class="tabs">
+              <div class="tab active" id="nftsTab" onclick="switchTab('nfts')">
+                <div class="created">Nfts</div>
+                <div class="div-wrapper"><div class="text-wrapper-2">302</div></div>
+              </div>
+              <div class="tab-2" id="collectionsTab" onclick="switchTab('collections')">
+                <div class="created-2">Collections</div>
+                <div class="element-wrapper"><div class="text-wrapper-2">67</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="NFT-cards-section" id="nftsContent">
+          <div class="NFT-cards-row">
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-13.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Magic Mushroom 0325</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-38.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Shroomie</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-14.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Happy Robot 032</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-40.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">BeKind2Robots</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-15.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Happy Robot 024</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-40.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">BeKind2Robots</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="NFT-cards-row">
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-16.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Designer Bear</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder-2"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-41.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Mr Fox</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-49.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Colorful Dog 0356</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-42.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Keepitreal</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-18.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Dancing Robot 0312</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-43.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Robotica</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="NFT-cards-row">
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-19.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Cherry Blossom Girl 035</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-44.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">MoonDancer</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-20.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Space Travel</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-45.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">NebulaKid</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-21.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Sunset Dimension</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-46.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Animakid</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="NFT-cards-row">
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-22.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Desert Walk</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-47.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Catch 22</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-23.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Icecream Ape 0324</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-48.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Ice Ape Club</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img
+                  class="image-placeholder"
+                  src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-24.png"
+                />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Colorful Dog 0344</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img
+                          class="avatar-placeholder"
+                          src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-49.png"
+                        />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">PuppyPower</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Price</div>
+                    <div class="text-wrapper-4">1.63 ETH</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Highest Bid</div>
+                    <div class="text-wrapper-6">0.33 wETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="NFT-cards-section" id="collectionsContent" style="display: none;">
+          <div class="NFT-cards-row">
+            <div class="NFT-card">
+              <div class="image">
+                <img class="image-placeholder" src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-13.png" />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Dsgn Animals</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img class="avatar-placeholder-2" src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-41.png" />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">MrFox</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Items</div>
+                    <div class="text-wrapper-4">1025+</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Floor Price</div>
+                    <div class="text-wrapper-6">0.80 ETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img class="image-placeholder" src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-14.png" />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Magic Mushrooms</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img class="avatar-placeholder" src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-42.png" />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Shroomie</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Items</div>
+                    <div class="text-wrapper-4">1025+</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Floor Price</div>
+                    <div class="text-wrapper-6">1.63 ETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img class="image-placeholder" src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-15.png" />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Disco Machines</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img class="avatar-placeholder" src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-43.png" />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">BeKind2Robots</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Items</div>
+                    <div class="text-wrapper-4">1025+</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Floor Price</div>
+                    <div class="text-wrapper-6">2.10 ETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NFT-card">
+              <div class="image">
+                <img class="image-placeholder" src="https://c.animaapp.com/mimzpstaEdv43I/img/image-placeholder-16.png" />
+              </div>
+              <div class="NFT-info">
+                <div class="artst-info">
+                  <div class="NFT-name">Art Blocks</div>
+                  <div class="artist-avatar-name">
+                    <div class="div-2">
+                      <div class="asset">
+                        <img class="avatar-placeholder-2" src="https://c.animaapp.com/mimzpstaEdv43I/img/avatar-placeholder-44.png" />
+                      </div>
+                    </div>
+                    <div class="NFT-artist">Cryptohands</div>
+                  </div>
+                </div>
+                <div class="additional-info">
+                  <div class="price">
+                    <div class="text-wrapper-3">Items</div>
+                    <div class="text-wrapper-4">2050+</div>
+                  </div>
+                  <div class="highest-bid">
+                    <div class="text-wrapper-5">Floor Price</div>
+                    <div class="text-wrapper-6">1.50 ETH</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer-info">
+          <div class="NFT-marketplace-info">
+            <div class="logo">
+              <img class="storefront" src="https://c.animaapp.com/mimzpstaEdv43I/img/storefront.svg" />
+              <img class="NFT-marketplace" src="https://c.animaapp.com/mimzpstaEdv43I/img/nft-marketplace.svg" />
+            </div>
+            <div class="div-3">
+              <p class="text-wrapper-7">NFT marketplace UI created with Anima for Figma.</p>
+              <div class="community-info">
+                <div class="text-wrapper-8">Join our community</div>
+                <div class="div-2">
+                  <img class="img-2" src="https://c.animaapp.com/mimzpstaEdv43I/img/discordlogo.svg" />
+                  <img class="img-2" src="https://c.animaapp.com/mimzpstaEdv43I/img/youtubelogo.svg" />
+                  <img class="img-2" src="https://c.animaapp.com/mimzpstaEdv43I/img/twitterlogo-1.svg" />
+                  <img class="img-2" src="https://c.animaapp.com/mimzpstaEdv43I/img/instagramlogo.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="explore">
+            <div class="text-wrapper-9">Explore</div>
+            <div class="div-3">
+              <a href="marketplace.html"><div class="text-wrapper-10">Marketplace</div></a>
+              <a href="rankings.html"><div class="text-wrapper-11">Rankings</div></a>
+              <a href="connect-wallet.html"><div class="text-wrapper-11">Connect a wallet</div></a>
+            </div>
+          </div>
+          <div class="subscribe">
+            <div class="text-wrapper-9">Join Our Weekly Digest</div>
+            <div class="div-3">
+              <p class="get-exclusive">Get exclusive promotions &amp; updates straight to your inbox.</p>
+              <div class="subscribe-form">
+                <input class="enter-your-email" placeholder="Enter your email here" />
+                <button class="button-2"><div class="button">Subscribe</div></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-3">
+          <img class="img" src="https://c.animaapp.com/mimzpstaEdv43I/img/divider.svg" />
+          <p class="text-wrapper-12">Ⓒ NFT Market. Use this template freely.</p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      function switchTab(tab) {
+        const nftsContent = document.getElementById('nftsContent');
+        const collectionsContent = document.getElementById('collectionsContent');
+        const nftsTab = document.getElementById('nftsTab');
+        const collectionsTab = document.getElementById('collectionsTab');
+
+        if (tab === 'nfts') {
+          nftsContent.style.display = 'block';
+          collectionsContent.style.display = 'none';
+          nftsTab.classList.add('active');
+          collectionsTab.classList.remove('active');
+        } else if (tab === 'collections') {
+          nftsContent.style.display = 'none';
+          collectionsContent.style.display = 'block';
+          nftsTab.classList.remove('active');
+          collectionsTab.classList.add('active');
+        }
+      }
+    </script>
+  </body>
+</html>
